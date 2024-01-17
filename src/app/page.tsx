@@ -1,8 +1,9 @@
+import Search from "@/components/Search";
+
 import { WeatherApiResponse } from "../../types";
 
-async function getWeatherData(): Promise<WeatherApiResponse> {
+async function getWeatherData(location: string): Promise<WeatherApiResponse> {
   const apiKey = process.env.API_KEY;
-  const location = "Narva";
 
   const response = await fetch(
     `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${location}`
@@ -11,8 +12,14 @@ async function getWeatherData(): Promise<WeatherApiResponse> {
   return data;
 }
 
-export default async function Home() {
-  const data = await getWeatherData();
+export default async function Home({ searchParams }: any) {
+  const data = await getWeatherData(searchParams.location);
 
-  return <div>{data.current.temp_c}</div>;
+  return (
+    <>
+      <Search />
+      <div>current city: {data.location.name}</div>
+      <div>Current temperature: {data.current.temp_c}°C</div>
+    </>
+  );
 }
