@@ -1,4 +1,5 @@
 import Search from "@/components/Search";
+import { Button } from "../../devlink";
 
 import { WeatherApiResponse } from "../../types";
 
@@ -20,6 +21,7 @@ export default async function Home({ searchParams }: any) {
       <Search />
       <div>current city: {data.location.name}</div>
       <div>Current temperature: {data.current.temp_c}°C</div>
+      <Button />
     </>
   );
 }
