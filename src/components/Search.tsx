@@ -1,29 +1,32 @@
 "use client";
 
-import { usePathname, useSearchParams } from "next/navigation";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 export default function ExampleSearch() {
-  const searchParams = useSearchParams();
-  const pathname = usePathname();
-  const { replace } = useRouter();
+  const [term, setTerm] = useState<string>("");
+
+  const router = useRouter();
 
   const handleSearch = (term: string) => {
-    const params = new URLSearchParams(searchParams);
-    if (term) {
-      params.set("location", term);
-    } else {
-      params.delete("location");
-    }
-
-    replace(`${pathname}?${params.toString()}`);
+    setTerm(term);
+    router.push(`/${term}`);
   };
 
   return (
-    <input
-      placeholder="test"
-      onChange={(event) => handleSearch(event.target.value)}
-      defaultValue={searchParams.get("location"?.toString()) || ""}
-    />
+    <>
+      <input
+        title={"Search"}
+        className={"text-black"}
+        onChange={(e) => setTerm(e.target.value)}
+      />
+      <button
+        title={"search"}
+        type={"submit"}
+        onClick={() => handleSearch(term)}
+      >
+        Search
+      </button>
+    </>
   );
 }
