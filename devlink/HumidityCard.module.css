@@ -282,7 +282,7 @@
   color: var(--color-brand--white);
   font-size: 3rem;
   font-weight: 200;
-  text-align: center;
+  text-align: left;
 }
 
 @media screen and (max-width: 479px) {

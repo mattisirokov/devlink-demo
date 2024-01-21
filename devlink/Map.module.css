@@ -1,0 +1,50 @@
+.component-card {
+  display: flex;
+  max-width: none;
+  padding: 30px 23px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  border-style: solid;
+  border-width: 1px;
+  border-color: hsla(0, 0.00%, 100.00%, 0.43);
+  border-radius: 10px;
+
+  background-color: hsla(0, 0.00%, 100.00%, 0.14);
+
+  backdrop-filter: blur(20px);
+}
+
+.component-card.no-padding {
+  padding: 0px;
+  border-style: none;
+}
+
+.component-card.justify-start {
+  justify-content: flex-start;
+}
+
+.component-card.forecast-card {
+  justify-content: flex-start;
+}
+
+.component-card.overview-card {
+  height: 100%;
+  padding-bottom: 0px;
+  justify-content: flex-start;
+}
+
+.map {
+  width: 100%;
+  height: 345px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+#w-node-ed8bdf09-c6d8-4084-4a33-209a1669df46-1669df46 {
+  grid-column-start: span 1;
+  grid-column-end: span 1;
+  grid-row-start: span 1;
+  grid-row-end: span 1;
+}
