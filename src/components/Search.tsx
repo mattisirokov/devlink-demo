@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
+import Button from "./Button";
+
 export default function ExampleSearch() {
   const [term, setTerm] = useState<string>("");
 
@@ -16,17 +18,16 @@ export default function ExampleSearch() {
   return (
     <>
       <input
+        className={"text-black p-2 mr-2 rounded-md outline-none"}
         title={"Search"}
-        className={"text-black"}
         onChange={(e) => setTerm(e.target.value)}
       />
-      <button
-        title={"search"}
-        type={"submit"}
+
+      <Button
+        text={"Search"}
+        type={"button"}
         onClick={() => handleSearch(term)}
-      >
-        Search
-      </button>
+      />
     </>
   );
 }
