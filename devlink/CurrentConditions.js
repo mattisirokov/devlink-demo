@@ -5,7 +5,7 @@ import _styles from "./CurrentConditions.module.css";
 
 export function CurrentConditions({ as: _Component = _Builtin.Block }) {
   return (
-    <_Component className={_utils.cx(_styles, "component-card")} tag="div">
+    <_Component className={_utils.cx(_styles, "card-item")} tag="div">
       <_Builtin.Grid
         className={_utils.cx(_styles, "current-overview-grid")}
         tag="div"

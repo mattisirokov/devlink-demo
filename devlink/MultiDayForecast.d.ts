@@ -1,5 +1,5 @@
 import * as React from "react";
 
-declare function MultiDayForecast(props: {
+declare function MultidayForecast(props: {
   as?: React.ElementType;
 }): React.JSX.Element;

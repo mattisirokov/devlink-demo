@@ -1,18 +1,11 @@
 import React from "react";
 import * as _Builtin from "./_Builtin";
 import * as _utils from "./utils";
-import _styles from "./Faveriots.module.css";
+import _styles from "./TopSpots.module.css";
 
-export function Faveriots({ as: _Component = _Builtin.Block }) {
+export function TopSpots({ as: _Component = _Builtin.Block }) {
   return (
-    <_Component
-      className={_utils.cx(_styles, "component-card")}
-      id={_utils.cx(
-        _styles,
-        "w-node-f85e1308-cf46-cc48-e216-430632a272c5-32a272c5"
-      )}
-      tag="div"
-    >
+    <_Component className={_utils.cx(_styles, "faveriots-wrapper")} tag="div">
       <_Builtin.Block
         className={_utils.cx(_styles, "top-wrapper", "bottm-margin-m")}
         tag="div"

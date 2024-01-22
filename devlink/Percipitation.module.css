@@ -1,38 +1,6 @@
-.component-card {
-  display: flex;
-  max-width: none;
-  padding: 30px 23px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-
-  border-style: solid;
-  border-width: 1px;
-  border-color: hsla(0, 0.00%, 100.00%, 0.43);
-  border-radius: 10px;
-
-  background-color: hsla(0, 0.00%, 100.00%, 0.14);
-
-  backdrop-filter: blur(20px);
-}
-
-.component-card.no-padding {
-  padding: 0px;
-  border-style: none;
-}
-
-.component-card.justify-start {
-  justify-content: flex-start;
-}
-
-.component-card.forecast-card {
-  justify-content: flex-start;
-}
-
-.component-card.overview-card {
+.percipitation-wrapper {
+  width: 100%;
   height: 100%;
-  padding-bottom: 0px;
-  justify-content: flex-start;
 }
 
 .card-title {
@@ -40,6 +8,9 @@
   font-size: 3rem;
   font-weight: 200;
   text-align: left;
+  white-space: nowrap;
+  word-break: normal;
+  overflow-wrap: normal;
 }
 
 @media screen and (max-width: 479px) {
@@ -99,11 +70,4 @@
   .margin-small {
     margin: 1.25rem;
   }
-}
-
-#w-node-_4a4f0081-e647-e0f0-dff6-2aa22b41e614-2b41e614 {
-  grid-column-start: span 1;
-  grid-column-end: span 1;
-  grid-row-start: span 1;
-  grid-row-end: span 1;
 }

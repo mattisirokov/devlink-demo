@@ -7,11 +7,5 @@
 
 body {
   background-color: black;
-  color: white;
-}
-
-.dashboardGrid {
-  grid-template-columns: 1.75fr 1fr;
-  grid-template-rows: auto auto auto auto;
-  background-color: black;
+  color: black;
 }

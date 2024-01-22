@@ -6,11 +6,7 @@ import _styles from "./Percipitation.module.css";
 export function Percipitation({ as: _Component = _Builtin.Block }) {
   return (
     <_Component
-      className={_utils.cx(_styles, "component-card", "forecast-card")}
-      id={_utils.cx(
-        _styles,
-        "w-node-_4a4f0081-e647-e0f0-dff6-2aa22b41e614-2b41e614"
-      )}
+      className={_utils.cx(_styles, "percipitation-wrapper")}
       tag="div"
     >
       <_Builtin.Heading

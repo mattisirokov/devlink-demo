@@ -1,5 +1,5 @@
 import * as React from "react";
 
-declare function Faveriots(props: {
+declare function BackgroundImage(props: {
   as?: React.ElementType;
 }): React.JSX.Element;

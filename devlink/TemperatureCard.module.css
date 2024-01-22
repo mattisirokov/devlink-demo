@@ -277,6 +277,9 @@
   font-size: 3rem;
   font-weight: 200;
   text-align: left;
+  white-space: nowrap;
+  word-break: normal;
+  overflow-wrap: normal;
 }
 
 @media screen and (max-width: 479px) {
