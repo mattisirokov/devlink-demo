@@ -3,31 +3,36 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
-import Button from "./Button";
-
-export default function ExampleSearch() {
-  const [term, setTerm] = useState<string>("");
+export default function Search() {
+  const [searchTerm, setSearchTerm] = useState("");
 
   const router = useRouter();
 
-  const handleSearch = (term: string) => {
-    setTerm(term);
-    router.push(`/${term}`);
+  const handleInputChange = (event: any) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const handleSearchClick = () => {
+    router.push(`/${searchTerm}`);
   };
 
   return (
-    <>
+    <div>
       <input
-        className={"text-black p-2 mr-2 rounded-md outline-none"}
-        title={"Search"}
-        onChange={(e) => setTerm(e.target.value)}
+        type="text"
+        placeholder="Search"
+        value={searchTerm}
+        onChange={handleInputChange}
+        style={{ color: "black" }}
       />
-
-      <Button
-        text={"Search"}
-        type={"button"}
-        onClick={() => handleSearch(term)}
-      />
-    </>
+      <button
+        style={{
+          backgroundColor: "black",
+        }}
+        onClick={handleSearchClick}
+      >
+        Search
+      </button>
+    </div>
   );
 }

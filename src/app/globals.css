@@ -1,11 +1,22 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
+body {
+  background-color: #141414;
+  color: white;
 }
 
-body {
-  background-color: black;
-  color: black;
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 5rem 1rem 1rem 1rem;
+}
+
+.twoColGrid {
+  position: relative;
+  z-index: 45;
+  display: grid;
+  grid-template-columns: 1.75fr 1fr;
+  grid-gap: 1rem;
+}
+
+.backgroundWrapper {
+  opacity: 0.65;
 }

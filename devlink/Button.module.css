@@ -1,0 +1,10 @@
+.button {
+  border-style: none;
+  border-width: 2px;
+  border-color: hsla(128, 64.58%, 64.24%, 1.00);
+  border-radius: 10px;
+
+  background-color: #69df79;
+
+  color: hsla(0, 0.00%, 0.00%, 1.00);
+}

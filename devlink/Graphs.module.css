@@ -19,6 +19,20 @@
   flex-direction: column;
 }
 
+.heading {
+  margin-top: 0px;
+  margin-bottom: auto;
+}
+
+.heading.mb-2 {
+  margin-bottom: 2rem;
+}
+
+.graph-slot {
+  width: 100%;
+  height: 100%;
+}
+
 .full-image {
   position: static;
   width: 100%;
@@ -31,7 +45,7 @@
   max-height: 350px;
 }
 
-#w-node-b3aca6ed-dcf5-b43f-422b-d4d2d7d8a9d3-d7d8a9d3 {
+#w-node-_35759e5f-1108-1845-9f15-a440cfa18dac-cfa18dac {
   grid-column-start: span 1;
   grid-column-end: span 1;
   grid-row-start: span 1;

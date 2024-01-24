@@ -1,0 +1,17 @@
+.bg-wrapper {
+  position: fixed;
+  left: 0%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  z-index: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-image: url("https://uploads-ssl.webflow.com/65b140a1dcb2f927d64d3916/65b14e8f5e0ef55812ced12b_applciation%20bg.jpeg");
+  background-position: 50% 50%;
+  background-size: cover;
+
+  opacity: 0.8;
+}

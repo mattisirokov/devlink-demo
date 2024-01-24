@@ -1,7 +1,7 @@
 module.exports = {
   host: "https://api.webflow.com",
   rootDir: "./devlink",
-  siteId: "65a93b454d212a1b404c3fc8",
-  authToken: process.env.WEBFLOW_API_KEY,
+  siteId: "65b140a1dcb2f927d64d3916",
+  authToken: "5fe5000d6ec9abd85b36f383869b7f57862e2bb5b1f7ee4f39f73aaaf0df5d6f",
   cssModules: true,
 };
