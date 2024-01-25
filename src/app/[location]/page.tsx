@@ -10,6 +10,8 @@ import {
   NavSearch,
 } from "../../../devlink";
 
+import DashboardSearch from "@/components/dashboard-search/DashboardSearch";
+
 import { WeatherApiResponse } from "../../../types";
 
 async function getWeatherData(location: string): Promise<WeatherApiResponse> {
@@ -29,10 +31,20 @@ export default async function Location({ params }: any) {
     <div className={"container"}>
       <div className={"twoColGrid"}>
         <NavHeader
-          headingText={`${data.location.name}, ${data.location.country}`}
+          headingText={new Date().toLocaleDateString(undefined, {
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          })}
         />
-        <NavSearch />
-        <WeekForecast headerText={data.location.localtime} />
+        <NavSearch searchBoxSlot={<DashboardSearch />} />
+        <WeekForecast
+          location={data.location.name}
+          currentTemperature={`${data.current.temp_c}°C`}
+          currentHumidity={`${data.current.humidity}%`}
+          currentWindSpeed={`${data.current.wind_kph}km/h`}
+        />
         <Map />
         <Graphs />
         <WeeklyForecast />
@@ -40,7 +52,11 @@ export default async function Location({ params }: any) {
         <WindSpeed />
       </div>
       <div className={"backgroundWrapper"}>
-        <Background />
+        <Background
+          background={`/assets/${
+            data.current.is_day ? "daytime" : "nighttime"
+          }.jpeg`}
+        />
       </div>
     </div>
   );

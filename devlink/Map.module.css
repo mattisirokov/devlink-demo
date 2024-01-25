@@ -15,8 +15,24 @@
   align-items: flex-start;
 }
 
+.flex-vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .card-wrapper.graphs-card {
   flex-direction: column;
+}
+
+.card-wrapper.current-forecast {
+  flex-direction: column;
+}
+
+.card-wrapper.faveriots-card {
+  flex-direction: column;
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
 }
 
 .full-image {
@@ -28,7 +44,7 @@
 }
 
 .full-image.h-full {
-  max-height: 350px;
+  max-height: 600px;
 }
 
 #w-node-b3aca6ed-dcf5-b43f-422b-d4d2d7d8a9d3-d7d8a9d3 {

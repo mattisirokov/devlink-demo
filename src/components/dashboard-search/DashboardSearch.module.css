@@ -1,0 +1,32 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  height: 100%;
+}
+
+.input {
+  color: black;
+  background-color: white;
+  border-radius: 0.5rem;
+  border: none;
+  width: 100%;
+  text-align: center;
+}
+
+.input::placeholder {
+  text-align: center;
+}
+
+.input:focus::placeholder {
+  color: transparent;
+}
+
+.submitButton {
+  background-color: #f5f5f5;
+  color: black;
+  border-radius: 0.5rem;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}

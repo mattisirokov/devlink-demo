@@ -21,10 +21,6 @@ export function NavHeader({
           {headingText}
         </_Builtin.Heading>
       </_Builtin.Block>
-      <_Builtin.Block
-        className={_utils.cx(_styles, "nav-search-slot")}
-        tag="div"
-      />
     </_Component>
   );
 }
