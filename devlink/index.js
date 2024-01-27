@@ -12,6 +12,7 @@ export * from "./Graphs";
 export * from "./HomeHero";
 export * from "./HourlyForecastCard";
 export * from "./Map";
+export * from "./MultidayForecastCard";
 export * from "./NavHeader";
 export * from "./NavSearch";
 export * from "./WeekForecast";

@@ -82,6 +82,16 @@
   font-weight: 400;
 }
 
+.heading.forecast-item {
+  display: flex;
+  height: 100%;
+  margin-bottom: 0px;
+  align-items: center;
+
+  font-size: 50px;
+  font-weight: 400;
+}
+
 .body-text {
   font-size: 18px;
 }

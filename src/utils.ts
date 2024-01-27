@@ -1,4 +1,4 @@
-import { WeatherApiResponse } from "../types";
+import { ForecastDay, WeatherApiResponse } from "../types";
 
 export function getDateAndTime() {
   const date = new Date();
@@ -20,6 +20,13 @@ export function formatTimestampToHour(time: string) {
   return `${hours}:${minutes}`;
 }
 
+export function formatDateToDayMonth(date: string) {
+  const dateObj = new Date(date);
+  const day = dateObj.toLocaleString("default", { day: "numeric" });
+  const month = dateObj.toLocaleString("default", { month: "numeric" });
+  return `${day}.${month}`;
+}
+
 export function dailyHourlyTemperature(apiResponse: WeatherApiResponse) {
   if (!apiResponse.forecast.forecastday.length) {
     return [];
@@ -28,5 +35,17 @@ export function dailyHourlyTemperature(apiResponse: WeatherApiResponse) {
     time: hour.time,
     temp_c: hour.temp_c,
     icon: hour.condition.icon,
+  }));
+}
+
+export function fiveDayForecast(apiResponse: WeatherApiResponse) {
+  if (!apiResponse.forecast.forecastday.length) {
+    return [];
+  }
+  return apiResponse.forecast.forecastday.map((day: ForecastDay) => ({
+    date: day.date,
+    avgtemp_c: day.day.avgtemp_c,
+    totalprecip_mm: day.day.totalprecip_mm,
+    maxwind_kph: day.day.maxwind_kph,
   }));
 }

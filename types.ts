@@ -124,3 +124,10 @@ export type forecastItem = {
   temp_c: number;
   icon: string;
 };
+
+export type FiveDayForecastItem = {
+  date: string;
+  avgtemp_c: number;
+  totalprecip_mm: number;
+  maxwind_kph: number;
+};
