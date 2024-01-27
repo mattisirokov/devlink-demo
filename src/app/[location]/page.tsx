@@ -22,7 +22,7 @@ async function getWeatherData(location: string): Promise<WeatherApiResponse> {
   const apiKey = process.env.WEATHER_API_KEY;
 
   const response = await fetch(
-    `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${location}&days=3&aqi=no&alerts=no`
+    `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${location}&days=3&aqi=no&alerts=no`,
   );
   const data = await response.json();
   return data;

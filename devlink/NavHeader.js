@@ -6,6 +6,7 @@ import _styles from "./NavHeader.module.css";
 export function NavHeader({
   as: _Component = _Builtin.Block,
   headingText = "Heading",
+  headingTime = {},
 }) {
   return (
     <_Component

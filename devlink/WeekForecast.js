@@ -11,8 +11,8 @@ export function WeekForecast({
   currentTemperature = "20c",
   currentHumidity = "24%",
   currentWindSpeed = "13mh/h",
+  country,
   hourlyForecastSlot,
-  country = "Location",
 }) {
   return (
     <_Component
@@ -61,7 +61,7 @@ export function WeekForecast({
               className={_utils.cx(_styles, "body-text")}
               tag="div"
             >
-              {country}
+              {country ?? "Location"}
             </_Builtin.Block>
           </_Builtin.Block>
           <_Builtin.Block

@@ -4,4 +4,5 @@ import * as Types from "./types";
 declare function NavHeader(props: {
   as?: React.ElementType;
   headingText?: React.ReactNode;
+  headingTime?: Types.Devlink.RuntimeProps;
 }): React.JSX.Element;
