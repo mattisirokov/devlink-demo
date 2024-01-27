@@ -10,6 +10,7 @@ export * from "./Button";
 export * from "./Favorites";
 export * from "./Graphs";
 export * from "./HomeHero";
+export * from "./HourlyForecastCard";
 export * from "./Map";
 export * from "./NavHeader";
 export * from "./NavSearch";

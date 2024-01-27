@@ -1,5 +1,5 @@
 import { Button } from "../../devlink";
-import Search from "@/components/Search";
+import Search from "@/components/home-search/Search";
 
 import { HomeHero } from "../../devlink";
 

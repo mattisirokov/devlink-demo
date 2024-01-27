@@ -1,7 +1,8 @@
 import * as React from "react";
 import * as Types from "./types";
 
-declare function WindSpeed(props: {
+declare function HourlyForecastCard(props: {
   as?: React.ElementType;
-  uvRadial?: Types.Devlink.Slot;
+  hour?: Types.Devlink.Slot;
+  temperature?: Types.Devlink.Slot;
 }): React.JSX.Element;

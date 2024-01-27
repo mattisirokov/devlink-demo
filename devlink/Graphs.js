@@ -3,7 +3,7 @@ import * as _Builtin from "./_Builtin";
 import * as _utils from "./utils";
 import _styles from "./Graphs.module.css";
 
-export function Graphs({ as: _Component = _Builtin.Block }) {
+export function Graphs({ as: _Component = _Builtin.Block, graphSlot }) {
   return (
     <_Component
       className={_utils.cx(_styles, "card-wrapper", "graphs-card")}
@@ -20,14 +20,7 @@ export function Graphs({ as: _Component = _Builtin.Block }) {
         {"Graphs for location"}
       </_Builtin.Heading>
       <_Builtin.Block className={_utils.cx(_styles, "graph-slot")} tag="div">
-        <_Builtin.Image
-          className={_utils.cx(_styles, "full-image", "h-full")}
-          loading="lazy"
-          width="auto"
-          height="auto"
-          alt=""
-          src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg"
-        />
+        {graphSlot}
       </_Builtin.Block>
     </_Component>
   );

@@ -1,0 +1,32 @@
+import { WeatherApiResponse } from "../types";
+
+export function getDateAndTime() {
+  const date = new Date();
+  const dateObj = new Date(date);
+  const day = dateObj.toLocaleString("default", { weekday: "long" });
+  const time = dateObj.toLocaleString("default", {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+  return { day, time };
+}
+
+export function formatTimestampToHour(time: string) {
+  const date = new Date(time);
+  let hours = date.getHours().toString().padStart(2, "0");
+  let minutes = date.getMinutes().toString().padStart(2, "0");
+  return `${hours}:${minutes}`;
+}
+
+export function dailyHourlyTemperature(apiResponse: WeatherApiResponse) {
+  if (!apiResponse.forecast.forecastday.length) {
+    return [];
+  }
+  return apiResponse.forecast.forecastday[0].hour.map((hour) => ({
+    time: hour.time,
+    temp_c: hour.temp_c,
+    icon: hour.condition.icon,
+  }));
+}

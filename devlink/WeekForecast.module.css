@@ -35,6 +35,10 @@
   grid-row-gap: 2rem;
 }
 
+.card-wrapper.uv-card {
+  flex-direction: column;
+}
+
 .top-flex-wrapper {
   display: flex;
   width: 100%;
@@ -97,18 +101,6 @@
   justify-content: space-between;
   grid-column-gap: 0.5rem;
   grid-row-gap: 0.5rem;
-}
-
-.current-forecast-item {
-  display: flex;
-  padding: 11px 21px;
-  flex-direction: column;
-  align-items: center;
-  grid-column-gap: 0.5rem;
-  grid-row-gap: 0.5rem;
-
-  border: 1px solid white;
-  border-radius: 10px;
 }
 
 #w-node-_8767447b-0d0a-910e-aa68-e695adb40a01-adb40a01 {

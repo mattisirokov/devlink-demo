@@ -35,6 +35,10 @@
   grid-row-gap: 2rem;
 }
 
+.card-wrapper.uv-card {
+  flex-direction: column;
+}
+
 .full-image {
   position: static;
   width: 100%;

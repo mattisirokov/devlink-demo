@@ -8,4 +8,6 @@ declare function WeekForecast(props: {
   currentTemperature?: React.ReactNode;
   currentHumidity?: React.ReactNode;
   currentWindSpeed?: React.ReactNode;
+  hourlyForecastSlot?: Types.Devlink.Slot;
+  country?: React.ReactNode;
 }): React.JSX.Element;

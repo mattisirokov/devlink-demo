@@ -35,6 +35,10 @@
   grid-row-gap: 2rem;
 }
 
+.card-wrapper.uv-card {
+  flex-direction: column;
+}
+
 .heading {
   margin-top: 0px;
   margin-bottom: auto;
