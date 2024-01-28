@@ -15,6 +15,7 @@ import UVRadial from "@/components/uv-radial/UVRadial";
 import HourlyForecastRow from "@/components/hourly-forecast-row/HourlyForecastRow";
 import MultidayForecastRow from "@/components/multiday-forecast-row/MultidayForecastRow";
 import GoogleMap from "@/components/maps/GoogleMap";
+import ChartComponent from "@/components/demo-chart/Chart";
 
 import {
   getDateAndTime,
@@ -22,13 +23,13 @@ import {
   fiveDayForecast,
 } from "@/utils";
 
-import { WeatherApiResponse } from "../../../types";
+import { ForecastDay, WeatherApiResponse } from "../../../types";
 
 async function getWeatherData(location: string): Promise<WeatherApiResponse> {
   const weatherAPIKey = process.env.WEATHER_API_KEY;
 
   const response = await fetch(
-    `http://api.weatherapi.com/v1/forecast.json?key=${weatherAPIKey}&q=${location}&days=5&aqi=no&alerts=no`
+    `http://api.weatherapi.com/v1/forecast.json?key=${weatherAPIKey}&q=${location}&days=14&aqi=no&alerts=no`
   );
   const data = await response.json();
   http: return data;
@@ -63,7 +64,19 @@ export default async function Location({ params }: any) {
             />
           }
         />
-        <Graphs />
+        <Graphs
+          header={"14 day UV index forecast"}
+          graphSlot={
+            <ChartComponent
+              labels={data.forecast.forecastday.map(
+                (day: ForecastDay) => day.date
+              )}
+              data={data.forecast.forecastday.map(
+                (day: ForecastDay) => day.day.uv
+              )}
+            />
+          }
+        />
         <WeeklyForecast
           multidayForecastSlot={
             <MultidayForecastRow forecastData={fiveDayForecast(data)} />

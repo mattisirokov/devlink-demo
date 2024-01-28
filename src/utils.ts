@@ -42,10 +42,12 @@ export function fiveDayForecast(apiResponse: WeatherApiResponse) {
   if (!apiResponse.forecast.forecastday.length) {
     return [];
   }
-  return apiResponse.forecast.forecastday.map((day: ForecastDay) => ({
-    date: day.date,
-    avgtemp_c: day.day.avgtemp_c,
-    totalprecip_mm: day.day.totalprecip_mm,
-    maxwind_kph: day.day.maxwind_kph,
-  }));
+  return apiResponse.forecast.forecastday
+    .slice(0, 5)
+    .map((day: ForecastDay) => ({
+      date: day.date,
+      avgtemp_c: day.day.avgtemp_c,
+      totalprecip_mm: day.day.totalprecip_mm,
+      maxwind_kph: day.day.maxwind_kph,
+    }));
 }

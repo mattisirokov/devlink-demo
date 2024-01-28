@@ -17,7 +17,7 @@ export function WindSpeed({ as: _Component = _Builtin.Block, uvRadial }) {
         className={_utils.cx(_styles, "heading", "mb-2")}
         tag="h1"
       >
-        {"UV index"}
+        {"Current UV index"}
       </_Builtin.Heading>
       <_Builtin.Block
         className={_utils.cx(_styles, "uv-radial-wrapper")}
