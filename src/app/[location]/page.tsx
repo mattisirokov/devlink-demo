@@ -14,6 +14,7 @@ import DashboardSearch from "@/components/dashboard-search/DashboardSearch";
 import UVRadial from "@/components/uv-radial/UVRadial";
 import HourlyForecastRow from "@/components/hourly-forecast-row/HourlyForecastRow";
 import MultidayForecastRow from "@/components/multiday-forecast-row/MultidayForecastRow";
+import GoogleMap from "@/components/maps/GoogleMap";
 
 import {
   getDateAndTime,
@@ -24,13 +25,13 @@ import {
 import { WeatherApiResponse } from "../../../types";
 
 async function getWeatherData(location: string): Promise<WeatherApiResponse> {
-  const apiKey = process.env.WEATHER_API_KEY;
+  const weatherAPIKey = process.env.WEATHER_API_KEY;
 
   const response = await fetch(
-    `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${location}&days=5&aqi=no&alerts=no`
+    `http://api.weatherapi.com/v1/forecast.json?key=${weatherAPIKey}&q=${location}&days=5&aqi=no&alerts=no`
   );
   const data = await response.json();
-  return data;
+  http: return data;
 }
 
 export default async function Location({ params }: any) {
@@ -53,7 +54,15 @@ export default async function Location({ params }: any) {
             <HourlyForecastRow forecastData={dailyHourlyTemperature(data)} />
           }
         />
-        <Map />
+        <Map
+          mapSlot={
+            <GoogleMap
+              longitude={data.location.lon}
+              latitude={data.location.lat}
+              locationName={data.location.name}
+            />
+          }
+        />
         <Graphs />
         <WeeklyForecast
           multidayForecastSlot={

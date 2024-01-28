@@ -39,6 +39,10 @@
   flex-direction: column;
 }
 
+.card-wrapper.no-padding {
+  padding: 0px;
+}
+
 .heading {
   margin-top: 0px;
   margin-bottom: auto;
