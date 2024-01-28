@@ -1,8 +1,6 @@
-import { Button } from "../../devlink";
-import Search from "@/components/home-search/Search";
-
 import { HomeHero } from "../../devlink";
+import AutocompleteSearch from "@/components/autocomplete-search/AutocompleteSearch";
 
 export default function Home() {
-  return <HomeHero searchSlot={<Search />} />;
+  return <HomeHero searchSlot={<AutocompleteSearch />} />;
 }

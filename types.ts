@@ -131,3 +131,8 @@ export type FiveDayForecastItem = {
   totalprecip_mm: number;
   maxwind_kph: number;
 };
+
+export type AutoCompleteItem = {
+  name: string;
+  country: string;
+};

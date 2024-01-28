@@ -10,7 +10,7 @@ import {
   NavSearch,
 } from "../../../devlink";
 
-import DashboardSearch from "@/components/dashboard-search/DashboardSearch";
+import AutocompleteSearch from "@/components/autocomplete-search/AutocompleteSearch";
 import UVRadial from "@/components/uv-radial/UVRadial";
 import HourlyForecastRow from "@/components/hourly-forecast-row/HourlyForecastRow";
 import MultidayForecastRow from "@/components/multiday-forecast-row/MultidayForecastRow";
@@ -26,7 +26,7 @@ import {
 import { ForecastDay, WeatherApiResponse } from "../../../types";
 
 async function getWeatherData(location: string): Promise<WeatherApiResponse> {
-  const weatherAPIKey = process.env.WEATHER_API_KEY;
+  const weatherAPIKey = process.env.NEXT_PUBLIC_WEATHER_API_KEY;
 
   const response = await fetch(
     `http://api.weatherapi.com/v1/forecast.json?key=${weatherAPIKey}&q=${location}&days=14&aqi=no&alerts=no`
@@ -44,7 +44,7 @@ export default async function Location({ params }: any) {
     <div className={"container"}>
       <div className={"twoColGrid"}>
         <NavHeader headingText={time} />
-        <NavSearch searchBoxSlot={<DashboardSearch />} />
+        <NavSearch searchBoxSlot={<AutocompleteSearch />} />
         <WeekForecast
           location={data.location.name}
           country={data.location.country}

@@ -133,7 +133,19 @@ export function WeekForecast({
         className={_utils.cx(_styles, "bottom-flex-wrapper")}
         tag="div"
       >
-        {hourlyForecastSlot ?? <HourlyForecastCard />}
+        {hourlyForecastSlot ?? (
+          <>
+            <HourlyForecastCard />
+            <HourlyForecastCard />
+            <HourlyForecastCard />
+            <HourlyForecastCard />
+            <HourlyForecastCard />
+            <HourlyForecastCard />
+            <HourlyForecastCard />
+            <HourlyForecastCard />
+            <HourlyForecastCard />
+          </>
+        )}
       </_Builtin.Block>
     </_Component>
   );

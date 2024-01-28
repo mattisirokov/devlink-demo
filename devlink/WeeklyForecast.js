@@ -27,7 +27,15 @@ export function WeeklyForecast({
         className={_utils.cx(_styles, "forecast-wrapper")}
         tag="div"
       >
-        {multidayForecastSlot ?? <MultidayForecastCard />}
+        {multidayForecastSlot ?? (
+          <>
+            <MultidayForecastCard />
+            <MultidayForecastCard />
+            <MultidayForecastCard />
+            <MultidayForecastCard />
+            <MultidayForecastCard />
+          </>
+        )}
       </_Builtin.Block>
     </_Component>
   );
