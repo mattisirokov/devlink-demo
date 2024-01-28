@@ -3,7 +3,12 @@ import * as _Builtin from "./_Builtin";
 import * as _utils from "./utils";
 import _styles from "./HomeHero.module.css";
 
-export function HomeHero({ as: _Component = _Builtin.Block, searchSlot }) {
+export function HomeHero({
+  as: _Component = _Builtin.Block,
+  searchSlot,
+  heroText = "The only place you should be checking the weather atm.",
+  heroDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
+}) {
   return (
     <_Component className={_utils.cx(_styles, "hero-section")} tag="header">
       <_Builtin.Block
@@ -34,11 +39,8 @@ export function HomeHero({ as: _Component = _Builtin.Block, searchSlot }) {
                   )}
                   tag="div"
                 >
-                  <_Builtin.Heading
-                    className={_utils.cx(_styles, "text-color-white")}
-                    tag="h1"
-                  >
-                    {"The only place you should be checking the weather atm."}
+                  <_Builtin.Heading className={_utils.cx(_styles, "")} tag="h1">
+                    {heroText}
                   </_Builtin.Heading>
                 </_Builtin.Block>
                 <_Builtin.Paragraph
@@ -48,9 +50,7 @@ export function HomeHero({ as: _Component = _Builtin.Block, searchSlot }) {
                     "text-color-white"
                   )}
                 >
-                  {
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat."
-                  }
+                  {heroDescription}
                 </_Builtin.Paragraph>
                 <_Builtin.Block
                   className={_utils.cx(_styles, "search-slot")}
