@@ -9,7 +9,7 @@ interface ChartComponentProps {
   data: number[];
 }
 
-export default function ChartComponent({ labels, data }: ChartComponentProps) {
+export default function UVChart({ labels, data }: ChartComponentProps) {
   const chartRef = useRef<HTMLCanvasElement>(null);
   const chartInstance = useRef<Chart<"line", number[], string> | null>(null);
 

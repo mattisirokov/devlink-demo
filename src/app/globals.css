@@ -11,8 +11,8 @@ body {
 
 .twoColGrid {
   position: relative;
-  z-index: 45;
   display: grid;
+  z-index: 1;
   grid-template-columns: 1.75fr 1fr;
   grid-gap: 1rem;
 }

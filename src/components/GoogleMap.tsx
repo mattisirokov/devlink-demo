@@ -57,7 +57,7 @@ function MapComponent({ longitude, latitude, locationName }: MapProps) {
           },
         }}
       >
-        <p style={{ color: "black" }}>{locationName}</p>
+        <p style={{ color: "black", marginBottom: "0" }}>{locationName}</p>
       </InfoWindowF>
       <></>
     </GoogleMap>

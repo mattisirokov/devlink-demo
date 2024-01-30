@@ -76,6 +76,10 @@
   align-items: center;
 }
 
+.graph-slot.smaller {
+  min-height: 350px;
+}
+
 #w-node-_35759e5f-1108-1845-9f15-a440cfa18dac-cfa18dac {
   grid-column-start: span 1;
   grid-column-end: span 1;

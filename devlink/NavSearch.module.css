@@ -1,3 +1,7 @@
+.search-wrapper {
+  position: relative;
+}
+
 #w-node-_14b4bb94-839c-c3a9-a363-c2d50b5c10ff-0b5c10ff {
   grid-column-start: span 1;
   grid-column-end: span 1;

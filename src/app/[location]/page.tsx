@@ -15,7 +15,9 @@ import UVRadial from "@/components/UVRadial";
 import HourlyForecastRow from "@/components/HourlyForecastRow";
 import MultidayForecastRow from "@/components/MultidayForecastRow";
 import GoogleMap from "@/components/GoogleMap";
-import ChartComponent from "@/components/Chart";
+import UVChart from "@/components/UVChart";
+import RainChart from "@/components/RainChart";
+import CommandPalette from "@/components/CommandPalette";
 
 import {
   getDateAndTime,
@@ -44,8 +46,14 @@ export default async function Location({ params }: any) {
   return (
     <div className={"container"}>
       <div className={"twoColGrid"}>
-        <NavHeader headingText={time} localTime={`The local time in ${data.location.name} is ${data.location.localtime}`} />
-        <NavSearch searchBoxSlot={<AutocompleteSearch />} />
+        <NavHeader
+          headingText={time}
+          localTime={`The local time in ${data.location.name} is ${data.location.localtime}`}
+        />
+        <NavSearch
+          searchBoxSlot={<AutocompleteSearch />}
+          commandPaletteSlot={<CommandPalette />}
+        />
         <WeekForecast
           location={data.location.name}
           country={data.location.country}
@@ -68,7 +76,7 @@ export default async function Location({ params }: any) {
         <Graphs
           header={"14 day UV index forecast"}
           graphSlot={
-            <ChartComponent
+            <UVChart
               labels={data.forecast.forecastday.map(
                 (day: ForecastDay) => day.date
               )}
@@ -83,9 +91,21 @@ export default async function Location({ params }: any) {
             <MultidayForecastRow forecastData={fiveDayForecast(data)} />
           }
         />
-        <Favorites />
+        <Favorites
+          graphSlot={
+            <RainChart
+              labels={data.forecast.forecastday.map(
+                (day: ForecastDay) => day.date
+              )}
+              data={data.forecast.forecastday.map(
+                (day: ForecastDay) => day.day.daily_chance_of_rain
+              )}
+            />
+          }
+        />
         <WindSpeed uvRadial={<UVRadial value={data.current.uv} />} />
       </div>
+      <CommandPalette />
       <div className={"backgroundWrapper"}>
         <Background
           backgroundImage={`/assets/${
