@@ -1,8 +1,8 @@
-import { HourlyForecastCard } from "../../../devlink";
+import { HourlyForecastCard } from "../../devlink";
 
 import { formatTimestampToHour } from "@/utils";
 
-import { forecastItem } from "../../../types";
+import { forecastItem } from "../../types";
 
 interface HourlyForecastCardRowProps {
   forecastData: forecastItem[];

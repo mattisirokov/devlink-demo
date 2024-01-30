@@ -108,6 +108,14 @@
   margin-top: 0.5rem;
 }
 
+.body-text.mt-1 {
+  margin-top: 1rem;
+}
+
+.body-text.mt-0-75 {
+  margin-top: 0.85rem;
+}
+
 .bottom-flex-wrapper {
   display: flex;
   width: 100%;

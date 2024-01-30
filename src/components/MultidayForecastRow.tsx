@@ -1,8 +1,8 @@
-import { MultidayForecastCard } from "../../../devlink";
+import { MultidayForecastCard } from "../../devlink";
 
 import { formatDateToDayMonth } from "@/utils";
 
-import { FiveDayForecastItem } from "../../../types";
+import { FiveDayForecastItem } from "../../types";
 
 interface MultidayForecastCardProps {
   forecastData: FiveDayForecastItem[];

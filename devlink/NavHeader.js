@@ -7,6 +7,7 @@ export function NavHeader({
   as: _Component = _Builtin.Block,
   headingText = "Heading",
   headingTime = {},
+  localTime = "Location",
 }) {
   return (
     <_Component
@@ -21,6 +22,12 @@ export function NavHeader({
         <_Builtin.Heading className={_utils.cx(_styles, "heading")} tag="h1">
           {headingText}
         </_Builtin.Heading>
+      </_Builtin.Block>
+      <_Builtin.Block
+        className={_utils.cx(_styles, "body-text", "mt-0-75")}
+        tag="div"
+      >
+        {localTime}
       </_Builtin.Block>
     </_Component>
   );

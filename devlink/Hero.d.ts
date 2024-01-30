@@ -1,9 +1,7 @@
 import * as React from "react";
 import * as Types from "./types";
 
-declare function HomeHero(props: {
+declare function Hero(props: {
   as?: React.ElementType;
   searchSlot?: Types.Devlink.Slot;
-  heroText?: React.ReactNode;
-  heroDescription?: React.ReactNode;
 }): React.JSX.Element;

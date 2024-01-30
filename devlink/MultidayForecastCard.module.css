@@ -67,6 +67,14 @@
   margin-top: 0.5rem;
 }
 
+.body-text.mt-1 {
+  margin-top: 1rem;
+}
+
+.body-text.mt-0-75 {
+  margin-top: 0.85rem;
+}
+
 #w-node-_5c153808-1b8d-1de0-0691-b689f2dcd35c-f2dcd35a {
   grid-column-start: span 1;
   grid-column-end: span 1;

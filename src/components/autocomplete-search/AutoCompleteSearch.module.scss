@@ -1,0 +1,46 @@
+.fullWidth {
+  width: 100%;
+}
+
+.relativeWrapper {
+  position: relative;
+  width: 100%;
+  z-index: 300;
+}
+
+.search {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+  color: black;
+}
+
+.autocompleteDropdown {
+  position: absolute;
+  width: 100%;
+  max-height: 300px;
+  overflow-y: auto;
+  background-color: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  margin-top: 2px;
+}
+
+.autocompleteItemWrapper {
+  border-bottom: 1px solid #eee;
+}
+
+.autocompleteItem {
+  padding: 10px 15px;
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  border-bottom: 1px solid #eee;
+}

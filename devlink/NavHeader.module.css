@@ -1,7 +1,8 @@
 .navigation {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .heading {
@@ -26,6 +27,26 @@
 
   font-size: 50px;
   font-weight: 400;
+}
+
+.body-text {
+  font-size: 18px;
+}
+
+.body-text.smaller {
+  font-size: 14px;
+}
+
+.body-text.mt-0-5 {
+  margin-top: 0.5rem;
+}
+
+.body-text.mt-1 {
+  margin-top: 1rem;
+}
+
+.body-text.mt-0-75 {
+  margin-top: 0.85rem;
 }
 
 #w-node-_45ea4bd5-862d-091d-1958-0eaa0c4218f3-0c4218f3 {

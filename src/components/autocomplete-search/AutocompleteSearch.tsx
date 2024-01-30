@@ -5,6 +5,8 @@ import { useRouter } from "next/navigation";
 
 import { AutoCompleteItem } from "../../../types";
 
+import styles from "./AutoCompleteSearch.module.scss";
+
 export default function AutocompleteSearch() {
   const [searchTerm, setSearchTerm] = useState<string>("");
 
@@ -17,11 +19,10 @@ export default function AutocompleteSearch() {
   const getAutocompleteItems = async (location: string) => {
     try {
       const response = await fetch(
-        `https://api.weatherapi.com/v1/search.json?key=${process.env.NEXT_PUBLIC_WEATHER_API_KEY}&q=${location}`
+        `https://api.weatherapi.com/v1/search.json?key=${process.env.NEXT_PUBLIC_WEATHER_API_KEY}&q=${location},`
       );
       const data = await response.json();
       setAutocompleteItems(data);
-      console.log(data);
     } catch (error) {
       console.error("Failed to fetch autocomplete items:", error);
     }
@@ -64,57 +65,22 @@ export default function AutocompleteSearch() {
   }, []);
 
   return (
-    <div
-      style={{
-        width: "100%",
-        position: "relative",
-        zIndex: 300,
-      }}
-    >
-      <div style={{ width: "100%" }}>
+    <div className={styles.relativeWrapper}>
+      <div className={styles.fullWidth}>
         <input
+          className={styles.search}
           type="text"
           id={"searchBox"}
-          autoComplete={"off"}
           placeholder={`Press "/" to search`}
-          style={{
-            width: "100%",
-            padding: "10px 15px",
-            border: "1px solid #ccc",
-            borderRadius: "4px",
-            boxSizing: "border-box",
-            fontSize: "16px",
-            color: "black",
-          }}
           onChange={(e) => handleOnSearch(e.target.value)}
         />
         {autocompleteItems.length > 0 && (
-          <div
-            style={{
-              position: "absolute",
-              width: "100%",
-              maxHeight: "300px",
-              overflowY: "auto",
-              backgroundColor: "white",
-              boxShadow: "0px 4px 8px rgba(0,0,0,0.1)",
-              borderRadius: "4px",
-              marginTop: "2px",
-            }}
-          >
+          <div className={styles.autocompleteDropdown}>
             {autocompleteItems.map((item) => (
-              <div key={item.name} style={{ borderBottom: "1px solid #eee" }}>
+              <div key={item.name} className={styles.autocompleteItemWrapper}>
                 <li
                   onClick={() => handleOnSelect(item)}
-                  style={{
-                    padding: "10px 15px",
-                    cursor: "pointer",
-                    backgroundColor: "white",
-                    color: "black",
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    gap: "0.5rem",
-                  }}
+                  className={styles.autocompleteItem}
                 >
                   {formatResult(item)}
                 </li>
