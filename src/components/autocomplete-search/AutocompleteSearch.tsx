@@ -72,6 +72,7 @@ export default function AutocompleteSearch() {
           type="text"
           id={"searchBox"}
           placeholder={`Press "/" to search`}
+          autoComplete={"off"}
           onChange={(e) => handleOnSearch(e.target.value)}
         />
         {autocompleteItems.length > 0 && (

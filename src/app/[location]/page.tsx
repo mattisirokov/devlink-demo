@@ -17,7 +17,6 @@ import MultidayForecastRow from "@/components/MultidayForecastRow";
 import GoogleMap from "@/components/GoogleMap";
 import UVChart from "@/components/UVChart";
 import RainChart from "@/components/RainChart";
-import CommandPalette from "@/components/CommandPalette";
 
 import {
   getDateAndTime,
@@ -50,10 +49,7 @@ export default async function Location({ params }: any) {
           headingText={time}
           localTime={`The local time in ${data.location.name} is ${data.location.localtime}`}
         />
-        <NavSearch
-          searchBoxSlot={<AutocompleteSearch />}
-          commandPaletteSlot={<CommandPalette />}
-        />
+        <NavSearch searchBoxSlot={<AutocompleteSearch />} />
         <WeekForecast
           location={data.location.name}
           country={data.location.country}
@@ -105,7 +101,6 @@ export default async function Location({ params }: any) {
         />
         <WindSpeed uvRadial={<UVRadial value={data.current.uv} />} />
       </div>
-      <CommandPalette />
       <div className={"backgroundWrapper"}>
         <Background
           backgroundImage={`/assets/${

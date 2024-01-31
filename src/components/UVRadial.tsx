@@ -14,8 +14,8 @@ export default function UVRadial({ value }: UVRadialProps) {
         justifyContent: "center",
         alignContent: "center",
         margin: "0 auto",
-        width: "250px",
-        height: "250px",
+        width: "300px",
+        height: "300px",
       }}
     >
       <CircularProgressbar
@@ -29,7 +29,7 @@ export default function UVRadial({ value }: UVRadialProps) {
           textSize: "0.5rem",
           pathColor: "#21c55e",
           textColor: "white",
-          trailColor: "white",
+          trailColor: "#d6d6d6",
           backgroundColor: "#21c55e",
         })}
       />

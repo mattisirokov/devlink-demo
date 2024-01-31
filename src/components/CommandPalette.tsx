@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import "react-cmdk/dist/cmdk.css";
 import CommandPalette, {
@@ -8,44 +8,47 @@ import CommandPalette, {
   getItemIndex,
   useHandleOpenCommandPalette,
 } from "react-cmdk";
+import { AutoCompleteItem } from "../../types";
 
 const Example = () => {
   const [page, setPage] = useState<"root" | "projects">("root");
   const [open, setOpen] = useState<boolean>(false);
   const [search, setSearch] = useState("");
 
+  const [autocompleteItems, setAutocompleteItems] = useState<
+    AutoCompleteItem[]
+  >([]);
+
   useHandleOpenCommandPalette(setOpen);
 
+  useEffect(() => {
+    const getAutocompleteItems = async (location: string) => {
+      try {
+        const response = await fetch(
+          `https://api.weatherapi.com/v1/search.json?key=${process.env.NEXT_PUBLIC_WEATHER_API_KEY}&q=${location}`
+        );
+        const data = await response.json();
+        setAutocompleteItems(data);
+      } catch (error) {
+        console.error("Failed to fetch autocomplete items:", error);
+      }
+    };
+
+    if (search) {
+      getAutocompleteItems(search);
+    }
+  }, [search]);
+
   const filteredItems = filterItems(
-    [
-      {
-        heading: "Home",
-        id: "home",
-        items: [
-          {
-            id: "home",
-            children: "Home",
-            icon: "HomeIcon",
-            href: "#",
-          },
-          {
-            id: "settings",
-            children: "Settings",
-            icon: "CogIcon",
-            href: "#",
-          },
-          {
-            id: "projects",
-            children: "Projects",
-            icon: "RectangleStackIcon",
-            closeOnSelect: false,
-            onClick: () => {
-              setPage("projects");
-            },
-          },
-        ],
+    autocompleteItems.map((item) => ({
+      label: item.name,
+      heading: item.country,
+      onSelect: () => {
+        setOpen(false);
+        setSearch("");
+        setPage("root");
       },
-    ],
+    })),
     search
   );
 
@@ -60,16 +63,12 @@ const Example = () => {
     >
       <CommandPalette.Page id="root">
         {filteredItems.length ? (
-          filteredItems.map((list) => (
-            <CommandPalette.List key={list.id} heading={list.heading}>
-              {list.items.map(({ id, ...rest }) => (
-                <CommandPalette.ListItem
-                  key={id}
-                  index={getItemIndex(filteredItems, id)}
-                  {...rest}
-                />
-              ))}
-            </CommandPalette.List>
+          filteredItems.map((item) => (
+            <CommandPalette.ListItem
+              key={item.id}
+              index={getItemIndex(filteredItems, item.id)}
+              {...item}
+            />
           ))
         ) : (
           <CommandPalette.FreeSearchAction />
