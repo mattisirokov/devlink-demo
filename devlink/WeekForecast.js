@@ -143,7 +143,6 @@ export function WeekForecast({
             <HourlyForecastCard />
             <HourlyForecastCard />
             <HourlyForecastCard />
-            <HourlyForecastCard />
           </>
         )}
       </_Builtin.Block>

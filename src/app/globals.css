@@ -1,6 +1,7 @@
 body {
   background-color: #141414;
   color: white;
+  overflow-x: hidden;
 }
 
 .container {
@@ -15,6 +16,12 @@ body {
   z-index: 1;
   grid-template-columns: 1.75fr 1fr;
   grid-gap: 1rem;
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+  }
 }
 
 .backgroundWrapper {

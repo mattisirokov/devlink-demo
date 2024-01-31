@@ -57,6 +57,12 @@
   font-weight: 400;
 }
 
+@media screen and (max-width: 767px) {
+  .heading.lite {
+    font-size: 32px;
+  }
+}
+
 .heading.forecast-item {
   display: flex;
   height: 100%;
@@ -79,6 +85,12 @@
   grid-row-gap: 1rem;
   grid-template-columns: 1fr;
   grid-template-rows: auto auto auto auto auto;
+}
+
+@media screen and (max-width: 991px) {
+  .forecast-wrapper {
+    height: auto;
+  }
 }
 
 #w-node-_35b46b72-b359-9d5c-f90c-77a0eeb7fe25-eeb7fe25 {

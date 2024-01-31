@@ -7,6 +7,7 @@ export * from "./utils";
 export * from "./devlink";
 export * from "./Background";
 export * from "./Favorites";
+export * from "./GitHub";
 export * from "./Graphs";
 export * from "./Hero";
 export * from "./HourlyForecastCard";

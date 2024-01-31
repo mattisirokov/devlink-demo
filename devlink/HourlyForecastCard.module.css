@@ -14,6 +14,12 @@
   font-size: 18px;
 }
 
+@media screen and (max-width: 767px) {
+  .body-text {
+    font-size: 15px;
+  }
+}
+
 .body-text.smaller {
   font-size: 14px;
 }

@@ -57,6 +57,12 @@
   font-weight: 400;
 }
 
+@media screen and (max-width: 767px) {
+  .heading.lite {
+    font-size: 32px;
+  }
+}
+
 .heading.forecast-item {
   display: flex;
   height: 100%;
