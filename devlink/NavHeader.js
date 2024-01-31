@@ -8,6 +8,7 @@ export function NavHeader({
   headingText = "Heading",
   headingTime = {},
   localTime = "Location",
+  buttonSlot,
 }) {
   return (
     <_Component
@@ -18,11 +19,9 @@ export function NavHeader({
       )}
       tag="div"
     >
-      <_Builtin.Block tag="div">
-        <_Builtin.Heading className={_utils.cx(_styles, "heading")} tag="h1">
-          {headingText}
-        </_Builtin.Heading>
-      </_Builtin.Block>
+      <_Builtin.Heading className={_utils.cx(_styles, "heading")} tag="h1">
+        {headingText}
+      </_Builtin.Heading>
       <_Builtin.Block
         className={_utils.cx(_styles, "body-text", "mt-0-75")}
         tag="div"

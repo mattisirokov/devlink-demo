@@ -8,6 +8,7 @@ import {
   WindSpeed,
   NavHeader,
   NavSearch,
+  Button,
 } from "../../../devlink";
 
 import AutocompleteSearch from "@/components/autocomplete-search/AutocompleteSearch";
@@ -41,7 +42,6 @@ export default async function Location({ params }: any) {
   const data = await getWeatherData(params.location);
 
   const { time } = getDateAndTime();
-
   return (
     <div className={"container"}>
       <div className={"twoColGrid"}>

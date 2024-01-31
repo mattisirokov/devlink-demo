@@ -6,4 +6,5 @@ declare function NavHeader(props: {
   headingText?: React.ReactNode;
   headingTime?: Types.Devlink.RuntimeProps;
   localTime?: React.ReactNode;
+  buttonSlot?: Types.Devlink.Slot;
 }): React.JSX.Element;

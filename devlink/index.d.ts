@@ -6,6 +6,7 @@ export * from "./interactions";
 export * from "./utils";
 export * from "./devlink";
 export * from "./Background";
+export * from "./Button";
 export * from "./Favorites";
 export * from "./GitHub";
 export * from "./Graphs";
