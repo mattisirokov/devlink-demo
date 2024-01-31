@@ -39,42 +39,43 @@ const Example = () => {
     }
   }, [search]);
 
-  const filteredItems = filterItems(
-    autocompleteItems.map((item) => ({
-      label: item.name,
-      heading: item.country,
-      onSelect: () => {
-        setOpen(false);
-        setSearch("");
-        setPage("root");
-      },
-    })),
-    search
-  );
+  // const filteredItems = filterItems(
+  //   autocompleteItems.map((item) => ({
+  //     label: item.name,
+  //     heading: item.country,
+  //     onSelect: () => {
+  //       setOpen(false);
+  //       setSearch("");
+  //       setPage("root");
+  //     },
+  //   })),
+  //   search
+  // );
 
   return (
-    <CommandPalette
-      onChangeSearch={setSearch}
-      onChangeOpen={setOpen}
-      search={search}
-      isOpen={open}
-      page={page}
-      placeholder={"Search weather..."}
-    >
-      <CommandPalette.Page id="root">
-        {filteredItems.length ? (
-          filteredItems.map((item) => (
-            <CommandPalette.ListItem
-              key={item.id}
-              index={getItemIndex(filteredItems, item.id)}
-              {...item}
-            />
-          ))
-        ) : (
-          <CommandPalette.FreeSearchAction />
-        )}
-      </CommandPalette.Page>
-    </CommandPalette>
+    // <CommandPalette
+    //   onChangeSearch={setSearch}
+    //   onChangeOpen={setOpen}
+    //   search={search}
+    //   isOpen={open}
+    //   page={page}
+    //   placeholder={"Search weather..."}
+    // >
+    //   {/* <CommandPalette.Page id="root">
+    //     {filteredItems.length ? (
+    //       filteredItems.map((item) => (
+    //         <CommandPalette.ListItem
+    //           key={item.id}
+    //           index={getItemIndex(filteredItems, item.id)}
+    //           {...item}
+    //         />
+    //       ))
+    //     ) : (
+    //       <CommandPalette.FreeSearchAction />
+    //     )}
+    //   </CommandPalette.Page> */}
+    // </CommandPalette>
+    <div></div>
   );
 };
 
