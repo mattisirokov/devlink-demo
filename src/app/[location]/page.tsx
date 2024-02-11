@@ -27,10 +27,8 @@ import {
 import { ForecastDay, WeatherApiResponse } from "../../../types";
 
 async function getWeatherData(location: string): Promise<WeatherApiResponse> {
-  const weatherAPIKey = process.env.NEXT_PUBLIC_WEATHER_API_KEY;
-
   const response = await fetch(
-    `http://api.weatherapi.com/v1/forecast.json?key=${weatherAPIKey}&q=${location}&days=14&aqi=no&alerts=no`,
+    `http://api.weatherapi.com/v1/forecast.json?key=${process.env.NEXT_PUBLIC_WEATHER_API_KEY}&q=${location}&days=14&aqi=no&alerts=no`,
     { cache: "no-store" }
   );
   const data = await response.json();
@@ -53,7 +51,6 @@ export default async function Location({ params }: any) {
         <NavSearch searchBoxSlot={<AutocompleteSearch />} />
         <WeekForecast
           location={location.name}
-          country={location.country}
           currentTemperature={`${current.temp_c}°C`}
           currentHumidity={`${current.humidity}%`}
           currentWindSpeed={`${current.wind_kph}km/h`}
