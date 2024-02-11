@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 
 import { AutoCompleteItem } from "../../../types";
 
-import styles from "./AutoCompleteSearch.module.scss";
+import styles from "./AutoCompleteSearch.module.css";
 
 export default function AutocompleteSearch() {
   const [searchTerm, setSearchTerm] = useState<string>("");

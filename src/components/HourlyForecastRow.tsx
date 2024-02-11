@@ -13,6 +13,7 @@ export default function HourlyForecastCardRow({
 }: HourlyForecastCardRowProps) {
   return (
     <>
+      {/* Going to add a carousael here, for i'll just splice... */}
       {forecastData.slice(9, 18).map((item, index) => (
         <HourlyForecastCard
           key={index}

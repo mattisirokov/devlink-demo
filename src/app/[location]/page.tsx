@@ -39,22 +39,24 @@ async function getWeatherData(location: string): Promise<WeatherApiResponse> {
 
 export default async function Location({ params }: any) {
   const data = await getWeatherData(params.location);
+  const { location, current, forecast } = data;
 
   const { time } = getDateAndTime();
+
   return (
     <div className={"container"}>
       <div className={"twoColGrid"}>
         <NavHeader
           headingText={time}
-          localTime={`The local time in ${data.location.name} is ${data.location.localtime}`}
+          localTime={`The local time in ${location.name} is ${location.localtime}`}
         />
         <NavSearch searchBoxSlot={<AutocompleteSearch />} />
         <WeekForecast
-          location={data.location.name}
-          country={data.location.country}
-          currentTemperature={`${data.current.temp_c}°C`}
-          currentHumidity={`${data.current.humidity}%`}
-          currentWindSpeed={`${data.current.wind_kph}km/h`}
+          location={location.name}
+          country={location.country}
+          currentTemperature={`${current.temp_c}°C`}
+          currentHumidity={`${current.humidity}%`}
+          currentWindSpeed={`${current.wind_kph}km/h`}
           hourlyForecastSlot={
             <HourlyForecastRow forecastData={dailyHourlyTemperature(data)} />
           }
@@ -62,9 +64,9 @@ export default async function Location({ params }: any) {
         <Map
           mapSlot={
             <GoogleMap
-              longitude={data.location.lon}
-              latitude={data.location.lat}
-              locationName={data.location.name}
+              longitude={location.lon}
+              latitude={location.lat}
+              locationName={location.name}
             />
           }
         />
@@ -72,12 +74,8 @@ export default async function Location({ params }: any) {
           header={"14 day UV index forecast"}
           graphSlot={
             <UVChart
-              labels={data.forecast.forecastday.map(
-                (day: ForecastDay) => day.date
-              )}
-              data={data.forecast.forecastday.map(
-                (day: ForecastDay) => day.day.uv
-              )}
+              labels={forecast.forecastday.map((day: ForecastDay) => day.date)}
+              data={forecast.forecastday.map((day: ForecastDay) => day.day.uv)}
             />
           }
         />
@@ -89,21 +87,19 @@ export default async function Location({ params }: any) {
         <Favorites
           graphSlot={
             <RainChart
-              labels={data.forecast.forecastday.map(
-                (day: ForecastDay) => day.date
-              )}
-              data={data.forecast.forecastday.map(
+              labels={forecast.forecastday.map((day: ForecastDay) => day.date)}
+              data={forecast.forecastday.map(
                 (day: ForecastDay) => day.day.daily_chance_of_rain
               )}
             />
           }
         />
-        <WindSpeed uvRadial={<UVRadial value={data.current.uv} />} />
+        <WindSpeed uvRadial={<UVRadial value={current.uv} />} />
       </div>
       <div className={"backgroundWrapper"}>
         <Background
           backgroundImage={`/assets/${
-            data.current.is_day ? "daytime" : "nighttime"
+            current.is_day ? "daytime" : "nighttime"
           }.jpeg`}
         />
       </div>
