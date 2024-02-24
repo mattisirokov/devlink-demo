@@ -1,10 +1,35 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Weather Dashboard
+
+Weather Dashboard is a web application that presents users with real-time weather data and forecasts for cities around the globe. It harnesses the power of [WeatherApi.com](https://weatherapi.com) to fetch current conditions and future weather predictions. This application was built with the intent of exploring Webflow Devlink features and frontend weather data visualization.
+
+## Features
+
+* Search functionality for cities worldwide
+* Current weather information, including temperature, humidity, wind speed, and more
+* A forecast for the upcoming days
+* Interactive charts with Chart.js
+
+## Technology Stack
+
+* **Frontend**: Next.js, TypeScript, Chart.js, Webflow Devlink
+* **API**: [WeatherApi.com](https://weatherapi.com)
+
+## Screenshots of the project
+
+![Home screen]('/assets/home.png')
+
+![Dashboard]('/assets/dashboard.png')
+
 
 ## Getting Started
 
-First, run the development server:
+First, check out the .env.example and make a file called .env the room of the project with your own keys, refer to the .env.example file for the keys you need to add.
+
+Then, run the development server:
 
 ```bash
+npm install
+# then
 npm run dev
 # or
 yarn dev
@@ -16,10 +41,6 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
@@ -29,8 +50,15 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Acknowledgments
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* [WeatherApi.com](https://weatherapi.com) for providing weather data through their API.
+* The team at Webflow for creating Webflow Devlink.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Contact
+
+Project Link: [https://github.com/mattisirokov](https://github.com/mattisirokov)
+
+## Final Notes
+
+This project was made to explore the capabilities of Webflow Devlink and to practice frontend development. It is not intended for commercial use. If you have any questions or suggestions, feel free to reach out to me.
