@@ -16,9 +16,9 @@ Weather Dashboard is a web application that presents users with real-time weathe
 
 ## Screenshots of the project
 
-![Home screen]('/assets/home.png')
+![Home screen](public/assets/home.png)
 
-![Dashboard]('/assets/dashboard.png')
+![Dashboard](public/assets/dashboard.png)
 
 
 ## Getting Started
